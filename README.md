@@ -29,4 +29,4 @@ Author - Casper Koopman
 Contributor - Matthew Taylor
 
 ## License
-For open source projects, say how it is licensed.
+Developed under the GNU General Public License
