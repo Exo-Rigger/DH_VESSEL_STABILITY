@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import pypdf
-
+from openpyxl import load_workbook
 
 def readManifest(in_file):
     print(f"[o] Reading file: \t {in_file}")
@@ -25,9 +25,36 @@ def parseText(text_dump):
             unit = (container,size,weight)
             print(unit)
 
+
+def populateExcel(in_file):
+    print(f"[o] Loading File: \t {in_file}")
+    wb = load_workbook(in_file)
+
+    worksheet3 = wb["Blad3"]
+#   worksheet3['I10'] = 20.000
+    print(worksheet3['I10'].value)
+
+
+    wb.save(in_file)
+
+
+
+"""
+===============================================================================
++ FUNCTION TESTS
+===============================================================================
+"""
+def testPopulateExcel():
+    input_file = "./stabiliteit test.xlsx"
+    populateExcel(input_file)
+
+
 def testReadManifest():
     input_file = "./Voyage manifest incoming 9164DEL-I.pdf"
     readManifest(input_file)
 
+
+
 if __name__ == '__main__':
     testReadManifest()
+    testPopulateExcel()
