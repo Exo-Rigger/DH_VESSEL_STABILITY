@@ -1,0 +1,3 @@
+> Code for reading manifest in the format of [(container,size,weight,is_dg),]
+> Placement of container weights in stability excel sheet 3 according to rules set in rules.txt
+> Check that solutions yield a valid loading plan
